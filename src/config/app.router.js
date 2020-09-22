@@ -1,8 +1,12 @@
-routing.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
+routing.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider']
 
-export default function routing($stateProvider, $locationProvider, $urlRouterProvider) {
-    $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/login');
+export default function routing(
+    $stateProvider,
+    $locationProvider,
+    $urlRouterProvider
+) {
+    $locationProvider.html5Mode(true)
+    $urlRouterProvider.otherwise('/login')
     $stateProvider
         .state('login', {
             url: '/login',
@@ -11,5 +15,9 @@ export default function routing($stateProvider, $locationProvider, $urlRouterPro
         .state('home', {
             url: '/home',
             template: '<home></home>'
+        })
+        .state('install', {
+            url: '/install',
+            template: '<install></install>'
         })
 }

@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+</head>
+
+<body ng-app="HousecallAPP" ng-controller="InstallPageCtrl" ondragstart="return false" oncontextmenu="return false">
+    <div class="page-title" id="page-title">
+        <div ng-if="platform == 'Windows'">
+            <max-min-area isblack='true'></max-min-area>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="logo-area">
+            <img class="logo-img" ng-src="../../Common/img/{{ i18n.imageAppLogo }}">
+        </div>
+        <div ng-show="!isinstallFinish">
+            <div class="animation-area">
+                <div class="animation-external-cirle circle-animation"></div>
+                <div class="animation-internal-cirle">
+                    <div class="text-in-cirle">
+                        <div class="device-find-number">{{ installProcess }}%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="installing-text bold-font"> {{ i18n.installPageInstalling }}</div>
+        </div>
+
+        <div ng-show="isinstallFinish">
+            <div class="text-area">
+                <img class="complete-img" src="../../Common/img/ico_complete.png">
+                <div class="main-word bold-font">{{ i18n.installPageCompleted }}</div>
+                <div class="secondary-word">{{ i18n.installPageMessage }}</div>
+                <div class="accept-button" ng-click="StartNow()">{{ i18n.installPageStart }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer"></div>
+</body>
+
+</html>
